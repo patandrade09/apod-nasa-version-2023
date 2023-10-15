@@ -1,8 +1,9 @@
+const apiKey = import.meta.env.VITE_API_KEY;
+
 export const fecthDateImageUrl = async (dateImage: unknown) => {
-  const API_KEY = "ggMGCBk7bZyioUaGqoDQk0mZpoe1tehvURi7pQu1";
   try {
     const response = await fetch(
-      `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${dateImage}`
+      `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${dateImage}`
     );
     if (!response.ok) {
       return response;
@@ -17,10 +18,9 @@ export const fecthDateImageUrl = async (dateImage: unknown) => {
 };
 
 export const fetchDefaultImageUrl = async () => {
-  const API_KEY = "ggMGCBk7bZyioUaGqoDQk0mZpoe1tehvURi7pQu1";
   try {
     const response = await fetch(
-      `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`
+      `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`
     );
     if (!response.ok) {
       return response;
