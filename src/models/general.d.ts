@@ -25,4 +25,6 @@ interface ImageContentProps {
   setShowDetails: React.Dispatch<React.SetStateAction<boolean>>;
   hideDetails: boolean;
   setHideDetails: React.Dispatch<React.SetStateAction<boolean>>;
+  closeModal: boolean;
+  setCloseModal: React.Dispatch<React.SetStateAction<boolean>>;
 }

@@ -1,0 +1,87 @@
+import { useEffect, useState } from "react";
+import * as service from "../service/service";
+import { ApodResponse } from "../models/general";
+import { formatDate } from "../utils/formatters";
+
+const useApod = () => {
+  const [apodObject, setApodObject] = useState<ApodResponse | null>();
+  const [errorMessage, setErrorMessage] = useState(false);
+  const [date, setDate] = useState<Date | null>(new Date());
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [dateModified, setDateModified] = useState(false);
+  const [button, setShowButton] = useState(true);
+
+  const today = new Date();
+  const startDate = new Date("1995-06-21");
+
+  useEffect(() => {
+    fetchDefaultImage();
+  }, []);
+
+  useEffect(() => {
+    if (dateModified) {
+      setShowCalendar(false);
+      fetchDateImage();
+    }
+  }, [date, dateModified]);
+
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+    if (!dateModified) {
+      setDateModified(true);
+    }
+  };
+
+  const fetchDefaultImage = () => {
+    service.fetchDefaultImageUrl().then((response) => {
+      if (response.status) {
+        setErrorMessage(true);
+        setShowButton(false);
+        setApodObject(null);
+      } else {
+        setErrorMessage(false);
+        setApodObject(response);
+      }
+    });
+  };
+
+  const fetchDateImage = () => {
+    if (date && date !== today) {
+      const formatted = formatDate(date).toString();
+      service.fecthDateImageUrl(formatted).then((response) => {
+        if (response.status) {
+          setErrorMessage(true);
+          setShowButton(false);
+          setApodObject(null);
+        } else {
+          setErrorMessage(false);
+          setApodObject(response);
+          setTimeout(() => {
+            setShowButton(true);
+          }, 5000);
+        }
+      });
+    }
+  };
+
+  return {
+    apodObject,
+    setApodObject,
+    errorMessage,
+    setErrorMessage,
+    date,
+    setDate,
+    showCalendar,
+    setShowCalendar,
+    dateModified,
+    setDateModified,
+    button,
+    setShowButton,
+    today,
+    startDate,
+    handleDateChange,
+    fetchDateImage
+  };
+};
+
+export default useApod;

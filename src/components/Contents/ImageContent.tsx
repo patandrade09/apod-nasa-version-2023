@@ -1,8 +1,11 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
-import { ImageContentProps } from "./models/general";
+import { FaAngleDoubleLeft, FaAngleDoubleRight, FaWindowClose } from "react-icons/fa";
+import { ImageContentProps } from "../../models/general";
+import { formatDate } from "../../utils/formatters";
+import "animate.css";
+import "./contents.css"
 
 const ImageContent: React.FC<ImageContentProps> = ({
   apodObject,
@@ -18,18 +21,24 @@ const ImageContent: React.FC<ImageContentProps> = ({
   setShowDetails,
   hideDetails,
   setHideDetails,
+  closeModal,
+  setCloseModal
 }) => {
+
   return (
     <div
       className="app-container"
       style={{ backgroundImage: `url(${apodObject?.url})` }}
     >
-      {today && (
-        <h1 className="presentation animate__animated animate__fadeInDown animate__slow">
+      {formatDate(today) === formatDate(date) && !closeModal && (
+        <div className="modal animate__animated animate__fadeInDown animate__slow">
+        <h1 className="presentation">
           Discover the cosmos! Each day a different image or photograph of our
           fascinating universe is featured, along with a brief explanation
           written by a professional astronomer.
         </h1>
+        <FaWindowClose onClick={() => setCloseModal(true)} className="modal-close"/>
+        </div>
       )}
       {errorMessage && (
         <div className="title" style={{ color: "black" }}>

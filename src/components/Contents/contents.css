@@ -1,0 +1,213 @@
+.app-container {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: "Bold";
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-left: 4rem;
+  color: #fffffc;
+  backdrop-filter: blur(120px);
+  padding: 2rem 4rem;
+  margin-right: 4rem;
+  margin-top: 4rem;
+}
+
+.paragraph-video {
+  margin-top: 5px;
+}
+
+.paragraph,
+.presentation {
+  font-family: "Regular";
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 2rem 2rem;
+  color: #fffffc;
+  line-height: normal;
+  backdrop-filter: blur(50px);
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.modal {
+  display: flex;
+  flex-direction: row;
+  backdrop-filter: blur(50px);
+  margin-left: 4rem;
+  margin-right: 7rem;
+}
+
+.modal-close {
+  color: #fffffc;
+  width: 2rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
+
+.arrowContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-top: 3rem;
+  margin-left: 4rem;
+}
+
+.arrowStyle {
+  color: #fffffc;
+  width: 2rem;
+  height: 2rem;
+}
+
+.showButton,
+.hideButton {
+  font-family: "Regular";
+  font-size: 40px;
+  font-weight: 800;
+  color: #fffffc;
+  margin-right: 4rem;
+  background: none;
+  border: none;
+  padding: 2rem 4rem;
+}
+
+.showButton {
+  margin-right: 2rem;
+}
+
+.calendar-custom,
+.button {
+  margin-top: 4em;
+  margin-right: 4em;
+  font-family: "Bold";
+  width: 20rem;
+  height: 6rem;
+  font-size: 23px;
+  border-radius: 74px;
+  border: none;
+  background: #fffffc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.datepicker-container {
+  position: relative;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-left: 4rem;
+}
+
+.calendar-custom:focus {
+  outline: none;
+}
+
+.button:hover {
+  background: #292928;
+  color: #ffffff;
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 630px) {
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 38px;
+    margin: 10px;
+    padding: 1rem;
+  }
+  .presentation,
+  .paragraph {
+    font-size: 18px;
+    text-align: start;
+    margin: 10px;
+    padding: 1rem;
+  }
+
+  .button,
+  .calendar-custom {
+    margin-top: 1rem;
+    font-size: 20px;
+    padding: 1rem;
+    width: 15rem;
+    height: 5rem;
+  }
+
+  .arrowContainer {
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    margin-left: 3em;
+  }
+
+  .arrowStyle {
+    color: #fffffc;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .showButton,
+  .hideButton {
+    margin-top: 1rem;
+    font-family: "Regular";
+    font-size: 20px;
+    font-weight: 800;
+    color: #fffffc;
+    background: none;
+    border: none;
+    margin-right: 2rem;
+    padding: 0;
+  }
+
+  .showButton {
+    margin-right: 1rem;
+  }
+
+  .showButton {
+    margin-right: 2rem;
+  }
+  .datepicker-container {
+    position: relative;
+  }
+  .calendar-custom {
+    margin-left: 2em;
+  }
+  .video-container {
+    width: 300px;
+    height: 500px;
+  }
+}

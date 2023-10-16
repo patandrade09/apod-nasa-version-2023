@@ -1,7 +1,9 @@
 import React from "react";
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import DatePicker from "react-datepicker";
-import { ImageContentProps } from "./models/general";
+import { ImageContentProps } from "../../models/general";
+import "animate.css";
+import "./contents.css"
 
 const VideoContent: React.FC<ImageContentProps> = ({
   apodObject,
