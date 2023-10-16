@@ -1,7 +1,7 @@
 {
   "homepage": "https://patandrade09.github.io/apod-nasa-version-2023",
   "name": "apod-nasa",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
