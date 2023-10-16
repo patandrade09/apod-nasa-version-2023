@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter basename={"/apod-nasa-version-2023/"}>
-    <Route element={<App />} path="/" />
+    <Route element={<App />} path="/apod-nasa-version-2023" />
       <App />
     </BrowserRouter>
   </React.StrictMode>
