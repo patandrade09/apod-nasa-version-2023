@@ -6,9 +6,6 @@ const Header: React.FC = () => {
     <header className="header">
       <a className="anchor">Universe of the day</a>
       <div>
-        <a className="anchor" href={'/'}>
-          TODAY
-        </a>{" "}
         <a className="anchor" href="https://apod.nasa.gov/apod/astropix.html">
           APOD
         </a>{" "}
