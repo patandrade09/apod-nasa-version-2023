@@ -136,6 +136,9 @@
 }
 
 @media screen and (max-width: 630px) {
+  .app-container {
+    min-height: 150vh;
+  }
   .titleContainer {
     display: flex;
     flex-direction: column;
@@ -148,7 +151,23 @@
     margin: 10px;
     padding: 1rem;
   }
-  .presentation,
+  .presentation {
+    font-size: 18px;
+    text-align: start;
+    padding: 1rem;
+    margin:0
+  }
+  .modal {
+    margin-left: 1rem;
+    margin-right:1rem;
+  }
+
+  .modal-close {
+    color: #fffffc;
+    width: 5rem;
+    height: 4rem;
+  }
+
   .paragraph {
     font-size: 18px;
     text-align: start;
@@ -160,7 +179,6 @@
   .calendar-custom {
     margin-top: 1rem;
     font-size: 20px;
-    padding: 1rem;
     width: 15rem;
     height: 5rem;
   }
