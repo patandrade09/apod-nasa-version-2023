@@ -28,7 +28,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
   return (
     <div
       className="app-container"
-      style={{ backgroundImage: `url(${apodObject?.url})` }}
+      style={{ backgroundImage: `url(${apodObject?.url})`, paddingBottom: '3rem' }}
     >
       {formatDate(today) === formatDate(date) && !closeModal && (
         <div className="modal animate__animated animate__fadeInDown animate__slow">

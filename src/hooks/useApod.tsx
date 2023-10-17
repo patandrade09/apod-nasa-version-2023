@@ -10,6 +10,7 @@ const useApod = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [dateModified, setDateModified] = useState(false);
   const [button, setShowButton] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const today = new Date();
   const startDate = new Date("1995-06-21");
@@ -48,6 +49,7 @@ const useApod = () => {
   const fetchDateImage = () => {
     if (date && date !== today) {
       const formatted = formatDate(date).toString();
+      setIsLoading(true);
       service.fecthDateImageUrl(formatted).then((response) => {
         if (response.status) {
           setErrorMessage(true);
@@ -58,7 +60,8 @@ const useApod = () => {
           setApodObject(response);
           setTimeout(() => {
             setShowButton(true);
-          }, 5000);
+            setIsLoading(false);
+          }, 2000);
         }
       });
     }
@@ -80,7 +83,9 @@ const useApod = () => {
     today,
     startDate,
     handleDateChange,
-    fetchDateImage
+    fetchDateImage,
+    isLoading, 
+    setIsLoading
   };
 };
 

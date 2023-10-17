@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import ImageContent from "./components/Contents/ImageContent";
 import VideoContent from "./components/Contents/VideoContent";
 import useApod from "./hooks/useApod";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const [showDetails, setShowDetails] = useState(false);
@@ -22,7 +23,12 @@ function App() {
     startDate,
     handleDateChange,
     fetchDateImage,
+    isLoading
   } = useApod();
+
+  if(isLoading){
+    return <Loading/>
+  }
 
   return (
     <>
