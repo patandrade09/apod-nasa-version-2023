@@ -4,6 +4,7 @@
   background-position: center center;
   background-attachment: fixed;
   min-height: 100vh;
+  position: fixed
 }
 
 .titleContainer {
@@ -136,11 +137,7 @@
 
 
 @media screen and (max-width: 630px) {
-
-  .app-container {
-    min-height: 250vh;
-    padding: 40px
-  }
+  
   .titleContainer {
     display: flex;
     flex-direction: column;
