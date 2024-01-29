@@ -70,7 +70,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
           ) : (
             button && (
               <button
-                className="button animate__animated animate__fadeInDown animate__delay-1s"
+                className="button animate__animated animate__fadeInDown animate__slow"
                 onClick={() => setShowCalendar(true)}
               >
                 Choose a date

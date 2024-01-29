@@ -34,14 +34,19 @@ const useApod = () => {
   };
 
   const fetchDefaultImage = () => {
+    setIsLoading(true);
     service.fetchDefaultImageUrl().then((response) => {
-      if (response.status) {
+      if (!response.status) {
+        setErrorMessage(false);
+        setApodObject(response);
+        setTimeout(() => {
+          setShowButton(true);
+          setIsLoading(false);
+        }, 5000);
+      } else {
         setErrorMessage(true);
         setShowButton(false);
         setApodObject(null);
-      } else {
-        setErrorMessage(false);
-        setApodObject(response);
       }
     });
   };
@@ -51,17 +56,17 @@ const useApod = () => {
       const formatted = formatDate(date).toString();
       setIsLoading(true);
       service.fecthDateImageUrl(formatted).then((response) => {
-        if (response.status) {
-          setErrorMessage(true);
-          setShowButton(false);
-          setApodObject(null);
-        } else {
+        if (!response.status) {
           setErrorMessage(false);
           setApodObject(response);
           setTimeout(() => {
             setShowButton(true);
             setIsLoading(false);
-          }, 2000);
+          }, 5000);
+        } else {
+          setErrorMessage(true);
+          setShowButton(false);
+          setApodObject(null);
         }
       });
     }
@@ -84,8 +89,8 @@ const useApod = () => {
     startDate,
     handleDateChange,
     fetchDateImage,
-    isLoading, 
-    setIsLoading
+    isLoading,
+    setIsLoading,
   };
 };
 

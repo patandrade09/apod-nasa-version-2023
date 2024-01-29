@@ -135,6 +135,10 @@
 }
 
 @media screen and (max-width: 630px) {
+
+  .app-container {
+    background-size: cover;
+  }
   .titleContainer {
     display: flex;
     flex-direction: column;

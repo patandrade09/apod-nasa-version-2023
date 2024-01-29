@@ -4,7 +4,7 @@ import "./header.css";
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <a className="anchor">Universe of the day</a>
+      <a className="anchor">Picture of the day</a>
       <div>
         <a className="anchor" href="https://apod.nasa.gov/apod/astropix.html">
           APOD
