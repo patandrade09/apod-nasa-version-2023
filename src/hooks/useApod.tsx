@@ -39,10 +39,8 @@ const useApod = () => {
       if (!response.status) {
         setErrorMessage(false);
         setApodObject(response);
-        setTimeout(() => {
-          setShowButton(true);
-          setIsLoading(false);
-        }, 5000);
+        setShowButton(true);
+        setIsLoading(false);
       } else {
         setErrorMessage(true);
         setShowButton(false);
@@ -59,10 +57,8 @@ const useApod = () => {
         if (!response.status) {
           setErrorMessage(false);
           setApodObject(response);
-          setTimeout(() => {
-            setShowButton(true);
-            setIsLoading(false);
-          }, 5000);
+          setShowButton(true);
+          setIsLoading(false);
         } else {
           setErrorMessage(true);
           setShowButton(false);

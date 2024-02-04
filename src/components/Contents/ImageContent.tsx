@@ -31,7 +31,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
       style={{ backgroundImage: `url(${apodObject?.url})`, paddingBottom: '3rem' }}
     >
       {formatDate(today) === formatDate(date) && !closeModal && (
-        <div className="modal animate__animated animate__fadeInDown animate__slow">
+        <div className="modal animate__animated animate__fadeInDown">
         <h1 className="presentation">
           Discover the cosmos! Each day a different image or photograph of our
           fascinating universe is featured, along with a brief explanation
@@ -47,7 +47,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
       )}
       <div>
         <div className="titleContainer">
-          <h1 className="title animate__animated animate__fadeInDown animate__slow">
+          <h1 className="title animate__animated animate__fadeInDown">
             {apodObject?.title}
           </h1>
           {showCalendar ? (
@@ -70,7 +70,7 @@ const ImageContent: React.FC<ImageContentProps> = ({
           ) : (
             button && (
               <button
-                className="button animate__animated animate__fadeInDown animate__slow"
+                className="button animate__animated animate__fadeInDown"
                 onClick={() => setShowCalendar(true)}
               >
                 Choose a date

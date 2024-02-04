@@ -27,6 +27,7 @@
   padding: 2rem 4rem;
   margin-right: 4rem;
   margin-top: 4rem;
+  border-radius: 20px;
 }
 
 .paragraph-video {
@@ -43,17 +44,20 @@
   padding: 2rem 2rem;
   color: #fffffc;
   line-height: normal;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(200px);
   margin-left: 4rem;
   margin-right: 4rem;
+  border-radius: 20px;
+  
 }
 
 .modal {
   display: flex;
   flex-direction: row;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(200px);
   margin-left: 4rem;
   margin-right: 7rem;
+  border-radius: 20px;
 }
 
 .modal-close {
