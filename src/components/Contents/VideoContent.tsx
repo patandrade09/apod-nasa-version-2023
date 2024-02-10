@@ -29,7 +29,7 @@ const VideoContent: React.FC<ImageContentProps> = ({
       )}
       <div>
         <div className="titleContainer">
-          <h1 className="title animate__animated animate__fadeInDown animate__slow">
+          <h1 className="title">
             {apodObject?.title}
           </h1>
           {showCalendar ? (
