@@ -17,8 +17,6 @@ const VideoContent: React.FC<ImageContentProps> = ({
   startDate,
   showDetails,
   setShowDetails,
-  hideDetails,
-  setHideDetails,
 }) => {
   return (
     <div style={{ background: "black" }} className="app-container">
@@ -75,7 +73,7 @@ const VideoContent: React.FC<ImageContentProps> = ({
             <div>
               <button
                 onClick={() => {
-                  showDetails && setShowDetails(false), setHideDetails(true);
+                  showDetails && setShowDetails(false);
                 }}
                 className="hideButton"
               >
@@ -91,7 +89,7 @@ const VideoContent: React.FC<ImageContentProps> = ({
             <div className="animate__animated animate__pulse animate__infinite animate__delay-2s">
               <button
                 onClick={() => {
-                  !showDetails && setShowDetails(true), setHideDetails(false);
+                  !showDetails && setShowDetails(true);
                 }}
                 className="showButton"
               >
@@ -106,12 +104,7 @@ const VideoContent: React.FC<ImageContentProps> = ({
           )}
         </div>
         {showDetails && (
-          <p className="paragraph paragraph-video  animate__animated animate__fadeInLeft">
-            {apodObject?.explanation}
-          </p>
-        )}
-        {hideDetails && (
-          <p className="paragraph paragraph-video  animate__animated animate__fadeOutLeft">
+          <p className="paragraph">
             {apodObject?.explanation}
           </p>
         )}
